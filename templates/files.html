@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
+    <title>回傳結果</title>
+  </head>
+  <body>
+    <h1>回傳結果</h1>
+    <h2>列出Access_token</h2>
+    <pre>{{ access_token }}</pre>
+    <h2>Openid</h2>
+    <pre>{{ userinfo }}</pre>
+    <h2>列出雲端硬碟中的檔案</h2>
+    {% if files %}
+      <ul>
+        {% for file in files %}
+          <li>{{ file.name }} ({{ file.mimeType }})</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No files found.</p>
+    {% endif %}
+  </body>
+</html>
